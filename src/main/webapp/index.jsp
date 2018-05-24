@@ -29,27 +29,29 @@
               action="${pageContext.servletContext.contextPath}/"
               method="post">
             <img class="mb-4" src="http://www.construccionenacero.com/sites/construccionenacero.com/files/noticia/bc_07-16_n_5_copia.png" alt="" width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">CREDITO</h1>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" name="txtemail"
-                   class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" name="txtclave"
-                   class="form-control" placeholder="Password" required>
-            
-            
-            <div class="slidecontainer">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <h1 class="h3 mb-3 font-weight-normal">CREDITO</h1>                       
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Numero de credito</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Numero de credito">
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Monto a prestar</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <label for="exampleFormControlInput1">Numero Documento</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Numero Documento">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nombres</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombres">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Apellidos</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apellidos">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Monto a prestar</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Monto a prestar">
+            </div>
+            <div class="slidecontainer">
+                <input type="range" min="500" max="3000" value="50" class="slider" id="myRange">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Tipo trabajador</label>
@@ -69,11 +71,8 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Trabaja en la compañia</label>
                 <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>Si</option>
+                    <option>No</option>
                 </select>
             </div>      
             <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
