@@ -26,7 +26,7 @@
 
     <body class="text-center">
         <form class="form-signin"
-              action="${pageContext.servletContext.contextPath}/"
+              action="${pageContext.servletContext.contextPath}/IngresoServlet"
               method="post">
             <img class="mb-4" src="http://www.construccionenacero.com/sites/construccionenacero.com/files/noticia/bc_07-16_n_5_copia.png" alt="" width="72" height="72">
             <h1 class="h3 mb-3 font-weight-normal">CREDITO</h1>                       
@@ -75,8 +75,7 @@
                     <option>No</option>
                 </select>
             </div>      
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>            
         </form>
     </body>
 </html>
