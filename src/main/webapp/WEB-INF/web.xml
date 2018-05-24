@@ -12,6 +12,10 @@
         <servlet-name>IngresoServlet</servlet-name>
         <servlet-class>co.com.poli.appcreditos.controller.IngresoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegistrarServlet</servlet-name>
+        <servlet-class>co.com.poli.appcreditos.controller.RegistrarServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IngresarServlet</servlet-name>
         <url-pattern>/IngresarServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>IngresoServlet</servlet-name>
         <url-pattern>/IngresoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistrarServlet</servlet-name>
+        <url-pattern>/RegistrarServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
