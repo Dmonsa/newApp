@@ -33,7 +33,22 @@ public class IngresoServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         RequestDispatcher rd = null;
-
+        String credito = request.getParameter("txtcredito");
+        String documento = request.getParameter("txtdocumento");
+        String nombres = request.getParameter("txtnombres");
+        String apellidos = request.getParameter("txtapellidos");
+        String monto = request.getParameter("txtmonto");
+        String tipotrabajador = request.getParameter("txttipotrabajador");
+        String tipocredito = request.getParameter("txttipocredito");
+        String tcompania = request.getParameter("txttcompania");
+        String accion = request.getParameter("accion");
+        
+        switch(accion){
+        
+            case "GUARDAR":
+                break;
+        
+        }
         rd = request.getRequestDispatcher("/view/main.jsp");
 
         rd.forward(request, response);
