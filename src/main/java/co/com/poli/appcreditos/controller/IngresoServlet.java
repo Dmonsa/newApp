@@ -5,8 +5,13 @@
  */
 package co.com.poli.appcreditos.controller;
 
+import co.com.poli.appcreditos.jpacontroller.TblusuariosJpaController;
+import co.com.poli.appcreditos.util.JPAFactory;
+import co.com.poli.appcreditos.model.Tblusuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -31,27 +36,41 @@ public class IngresoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        RequestDispatcher rd = null;
-        String credito = request.getParameter("txtcredito");
-        String documento = request.getParameter("txtdocumento");
-        String nombres = request.getParameter("txtnombres");
-        String apellidos = request.getParameter("txtapellidos");
-        String monto = request.getParameter("txtmonto");
-        String tipotrabajador = request.getParameter("txttipotrabajador");
-        String tipocredito = request.getParameter("txttipocredito");
-        String tcompania = request.getParameter("txttcompania");
-        String accion = request.getParameter("accion");
-        
-        switch(accion){
-        
-            case "GUARDAR":
-                break;
-        
+        try {
+            HttpSession session = request.getSession(true);
+            RequestDispatcher rd = null;
+            String credito = request.getParameter("txtcredito");
+            String documento = request.getParameter("txtdocumento");
+            String nombres = request.getParameter("txtnombres");
+            String apellidos = request.getParameter("txtapellidos");
+            String monto = request.getParameter("txtmonto");
+            String tipotrabajador = request.getParameter("txttipotrabajador");
+            String tipocredito = request.getParameter("txttipocredito");
+            String tcompania = request.getParameter("txttcompania");
+            String accion = request.getParameter("accion");
+            
+            TblusuariosJpaController jpaController =
+                    new TblusuariosJpaController(JPAFactory.getFACTORY());
+            
+            switch(accion){
+                
+                case "GUARDAR":
+                    Tblusuarios tblusuarios = new Tblusuarios(credito);
+                    tblusuarios.setDocumento(documento);
+                    tblusuarios.setNombres(nombres);
+                    tblusuarios.setApellidos(apellidos);
+                    tblusuarios.setMonto(monto);
+                    tblusuarios.setTipotrabajador(tipotrabajador);
+                    tblusuarios.setTipocredito(tipocredito);
+                    tblusuarios.setTcomp(tcompania);
+                    jpaController.create(tblusuarios);
+                    break;
+            }
+            rd = request.getRequestDispatcher("/view/main.jsp");                    
+            rd.forward(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(IngresoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        rd = request.getRequestDispatcher("/view/main.jsp");
-
-        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
